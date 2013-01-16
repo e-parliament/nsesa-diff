@@ -19,14 +19,44 @@ public class DefaultDiffService implements DiffService {
 
     @Override
     public ComplexDiffResult complexDiff(String original, String modified, String overrideModified, ThreeWayDiffContext context) {
-        String[] complexDiff = DiffUtils.threeWayDiff(original, modified, overrideModified, context);
 
-        String coloredOriginal = complexDiff[0];
+        /*
+        ----------- WORKAROUND!!!!! -------------
+        Because of a bug during the consolidation of changes, we need to ensure that the templates
+        are using unique tags during the diffing, which will later on be substituted by the real
+        template.
+        If we don't this, we risk uneven tags because they are wrongly collapsed.
+        */
+        final ThreeWayDiffContext defaultContext = new ThreeWayDiffContext("<bi>{0}</bi>", "<red>{0}</red>",
+                "<ins>{0}</ins>", "<del>{0}</del>", "<blue>{0}</blue>",
+                context.getDiffMethod());
+
+        String[] complexDiff = DiffUtils.threeWayDiff(original, modified, overrideModified, defaultContext);
+
+        String coloredOriginal = workaroundToReplaceDefaultContextTemplatesWithHighlightSpans(complexDiff[0], context);
         String finalOriginal = "";
-        String coloredAmendment = complexDiff[1];
+        String coloredAmendment = workaroundToReplaceDefaultContextTemplatesWithHighlightSpans(complexDiff[1], context);
         String finalAmendment = "";
 
         return new ComplexDiffResult(finalOriginal, finalAmendment, coloredOriginal, coloredAmendment);
+    }
+
+    private String workaroundToReplaceDefaultContextTemplatesWithHighlightSpans(String original, ThreeWayDiffContext context) {
+        String modified = original.replaceAll("<bi>", splitTemplate(context.getOriginalChangeTemplate())[0]);
+        modified = modified.replaceAll("</bi>", splitTemplate(context.getOriginalChangeTemplate())[1]);
+        modified = modified.replaceAll("<red>", splitTemplate(context.getOriginalComplexChangeTemplate())[0]);
+        modified = modified.replaceAll("</red>", splitTemplate(context.getOriginalComplexChangeTemplate())[1]);
+        modified = modified.replaceAll("<ins>", splitTemplate(context.getComplexInsertTemplate())[0]);
+        modified = modified.replaceAll("</ins>", splitTemplate(context.getComplexInsertTemplate())[1]);
+        modified = modified.replaceAll("<del>", splitTemplate(context.getComplexDeleteTemplate())[0]);
+        modified = modified.replaceAll("</del>", splitTemplate(context.getComplexDeleteTemplate())[1]);
+        modified = modified.replaceAll("<blue>", splitTemplate(context.getComplexChangeTemplate())[0]);
+        modified = modified.replaceAll("</blue>", splitTemplate(context.getComplexChangeTemplate())[1]);
+        return modified;
+    }
+
+    private String[] splitTemplate(String inputTemplate) {
+        return inputTemplate.split("\\{0\\}");
     }
 
     @Override
