@@ -65,6 +65,29 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <!-- ***************************** Licence plugin    ***************************** -->
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.9.0</version>
+                <configuration>
+                    <header>src/main/resources/header.txt</header>
+                    <strictCheck>true</strictCheck>
+                    <encoding>UTF-8</encoding>
+                    <excludes>
+                        <exclude>.gitignore</exclude>
+                        <exclude>**/README.md</exclude>
+                        <exclude>licence.txt</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
