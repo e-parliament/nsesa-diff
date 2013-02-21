@@ -2,12 +2,25 @@
 <project
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
         xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.nsesa</groupId>
     <artifactId>nsesa-diff</artifactId>
     <name>Diff</name>
     <url>http://maven.apache.org</url>
     <version>0.0.1</version>
+
+    <organization>
+        <url>http://www.europarl.europa.eu/</url>
+        <name>European Parliament</name>
+    </organization>
+    <licenses>
+        <license>
+            <name>European Union Public Licence (EUPL)</name>
+            <url>http://joinup.ec.europa.eu/software/page/eupl</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -123,5 +136,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
