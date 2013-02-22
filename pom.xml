@@ -6,8 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.nsesa</groupId>
     <artifactId>nsesa-diff</artifactId>
+    <packaging>jar</packaging>
     <name>Diff</name>
-    <url>http://maven.apache.org</url>
+    <url>https://bitbucket.org/pluppens/nsesa-diff</url>
     <version>0.0.1</version>
 
     <organization>
