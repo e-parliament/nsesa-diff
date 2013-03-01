@@ -8,7 +8,7 @@
     <artifactId>nsesa-diff</artifactId>
     <packaging>jar</packaging>
     <name>Diff</name>
-    <url>https://bitbucket.org/pluppens/nsesa-diff</url>
+    <url>http://code.at4am.org/nsesa-diff</url>
     <version>0.0.1</version>
 
     <organization>
