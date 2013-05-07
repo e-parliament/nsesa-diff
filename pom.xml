@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
     <name>Diff</name>
     <url>http://code.at4am.org/nsesa-diff</url>
-    <version>0.0.1</version>
+    <version>0.2</version>
 
     <organization>
         <url>http://www.europarl.europa.eu/</url>
@@ -112,6 +112,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
