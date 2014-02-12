@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.nsesa</groupId>
+  <artifactId>nsesa-diff</artifactId>
+  <version>0.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20140212.115154</timestamp>
+      <buildNumber>3</buildNumber>
+    </snapshot>
+    <lastUpdated>20140212115154</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.3-20140212.115154-3</value>
+        <updated>20140212115154</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.3-20140212.115154-3</value>
+        <updated>20140212115154</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>javadoc</classifier>
+        <extension>jar</extension>
+        <value>0.3-20140212.115154-3</value>
+        <updated>20140212115154</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.3-20140212.115154-3</value>
+        <updated>20140212115154</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

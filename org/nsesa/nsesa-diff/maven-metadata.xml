@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.nsesa</groupId>
+  <artifactId>nsesa-diff</artifactId>
+  <versioning>
+    <versions>
+      <version>0.3-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20140212115154</lastUpdated>
+  </versioning>
+</metadata>
